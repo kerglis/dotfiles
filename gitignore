@@ -6,3 +6,6 @@ mkmf.log
 TODO
 .rvmrc
 
+#TextMate Project File
+*.tmproj
+
