@@ -9,3 +9,4 @@ TODO
 #TextMate Project File
 *.tmproj
 
+.*.swp
