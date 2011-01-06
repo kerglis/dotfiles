@@ -20,11 +20,11 @@
   local = yellow bold
   remote = red bold
 [color "diff"]
-  meta = black bold
+  meta = yellow
   frag = cyan bold
   old = red bold
   new = green bold
 [color "status"]
   added = yellow bold
   changed = red bold # also deleted
-  untracked = black bold
+  untracked = yellow
