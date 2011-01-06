@@ -2,10 +2,22 @@ set encoding=utf-8 nobomb   " BOM often causes trouble
 
 syntax on
 
-
 " TODO :  CHECK 
 " fixdel                      " Make Backspace work
 " set ruler
+
+" Show some invisibles
+set list
+set listchars=tab:»·
+set listchars+=trail:·
+set listchars+=eol:¬
+
+" Ctrl-Tab = Next Buffer, Ctrl-Shift-Tab = Previous buffer
+nmap <C-Tab> <Esc>:bn<CR>
+nmap <C-S-Tab> <Esc>:bp<CR>
+
+"Allow to switch between buffers even they are unsaved
+set hidden
 
 "store lots of :cmdline history
 set history=1000
@@ -29,7 +41,6 @@ set statusline+=\ %P    "percent through file
 
 set laststatus=2        " Always show status line
 
-
 set scrolloff=2             " Minlines to show around cursor
 
 "indent settings
@@ -46,19 +57,26 @@ set number
 colorscheme twilight
 
 " Disable cursor keys, we're learning - HARDCORE MODE - HJKL
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+" noremap  <Up> ""
+" noremap! <Up> <Esc>
+" noremap  <Down> ""
+" noremap! <Down> <Esc>
+" noremap  <Left> ""
+" noremap! <Left> <Esc>
+" noremap  <Right> ""
+" noremap! <Right> <Esc>
 
 " Add end of line to the end of file
 :set endofline
 
 if has("gui_running")
+
+  " Increase space between lines - identical to TextMade default one
+  set linespace=2
+
+  " Right gutter - introduced in Vim 7.3
+  set colorcolumn=80
+  hi ColorColumn guibg=#2d2d2d
 
   " Fullscreen stuff
   set fuoptions=maxvert,maxhorz
@@ -80,7 +98,7 @@ if has("gui_running")
 
   " Number of horizontal lines on the screen
   set lines=48
-  set columns=155
+  set columns=85
 
 endif
 

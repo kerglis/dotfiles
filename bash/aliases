@@ -21,7 +21,7 @@ function m { mate ${*:-.}; }
 function cm { cd ~/code/$1; mate .; }
 
 # MacVim
-function v { mvim ${*:-.}; }
+alias v='mvim'
 function cv { cd ~/code/$1; mvim .; }
 
 # ls
