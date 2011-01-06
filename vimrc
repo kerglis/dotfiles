@@ -12,9 +12,10 @@ set listchars=tab:»·
 set listchars+=trail:·
 set listchars+=eol:¬
 
-" Ctrl-Tab = Next Buffer, Ctrl-Shift-Tab = Previous buffer
-nmap <C-Tab> <Esc>:bn<CR>
-nmap <C-S-Tab> <Esc>:bp<CR>
+" MinBuffExplorer
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 
 "Allow to switch between buffers even they are unsaved
 set hidden
@@ -98,7 +99,7 @@ if has("gui_running")
 
   " Number of horizontal lines on the screen
   set lines=48
-  set columns=85
+  set columns=125
 
 endif
 
