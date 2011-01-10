@@ -45,8 +45,14 @@ def history
 end
 
 # Allow using these gems without adding them to bundler
-$LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/hirb-0.3.5/lib"
-$LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/awesome_print-0.3.1/lib"
+# and try to load theese gems from rvm global gemset
+rvm_global_gem_path = ENV['GEM_PATH'].split(':').grep(/@global/).first
+if rvm_global_gem_path
+  $LOAD_PATH << "#{rvm_global_gem_path}/gems/hirb-0.3.5/lib"
+  $LOAD_PATH << "#{rvm_global_gem_path}/gems/awesome_print-0.3.1/lib"
+else
+  puts "Global rvm gemset 'global' not found"
+end
 
 begin
   require "ap"
