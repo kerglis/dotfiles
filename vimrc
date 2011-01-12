@@ -1,5 +1,9 @@
 set encoding=utf-8 nobomb   " BOM often causes trouble
 
+" This changes the values of a LOT of options, enabling features which
+" are not Vi compatible but really really nice
+set nocp
+
 syntax on
 
 " TODO :  CHECK 
