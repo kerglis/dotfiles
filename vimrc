@@ -10,16 +10,24 @@ syntax on
 " fixdel                      " Make Backspace work
 " set ruler
 
+" Fast saving
+nmap <leader>w :w<cr>
+
+" MRU Shortcut
+nmap <leader>r :MRU<cr>
+
+" Previous/Next Tab  Ctrl+Tab/Ctrl+Shift+Tab
+nmap <C-tab> :bn<CR>
+nmap <C-S-tab> :bp<CR>
+
+" Buftabs configuration
+let g:buftabs_only_basename=1
+
 " Show some invisibles
 set list
 set listchars=tab:»·
 set listchars+=trail:·
 set listchars+=eol:¬
-
-" MinBuffExplorer
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
 
 "Allow to switch between buffers even they are unsaved
 set hidden
