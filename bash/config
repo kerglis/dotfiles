@@ -41,7 +41,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 ### Oracle
-if [ -d "$HOME/Library" ]; then
+if [ -d "$HOME/Library/Oracle" ]; then
   export ORACLE_IC_HOME=$HOME/Library/Oracle/instantclient
   export DYLD_LIBRARY_PATH=$ORACLE_IC_HOME
   export TNS_ADMIN=$DYLD_LIBRARY_PATH
