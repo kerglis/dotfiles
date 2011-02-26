@@ -1,6 +1,10 @@
 def l!(stream = STDOUT)
-  ActiveRecord::Base.logger = Logger.new(stream)
-  ActiveRecord::Base.connection.instance_variable_set(:@logger, ActiveRecord::Base.logger)
+  Mongoid.logger = Logger.new(STDOUT) if defined?(Mongoid)
+
+  if defined?(ActiveRecord)
+    ActiveRecord::Base.logger = Logger.new(stream)
+    ActiveRecord::Base.connection.instance_variable_set(:@logger, ActiveRecord::Base.logger)
+  end
 end
 
 def r!
