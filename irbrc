@@ -48,7 +48,7 @@ end
 # and try to load theese gems from rvm global gemset
 rvm_global_gem_path = ENV['GEM_PATH'].split(':').grep(/@global/).first
 if rvm_global_gem_path
-  $LOAD_PATH << "#{rvm_global_gem_path}/gems/hirb-0.3.6/lib"
+  $LOAD_PATH << "#{rvm_global_gem_path}/gems/hirb-0.4.3/lib"
   $LOAD_PATH << "#{rvm_global_gem_path}/gems/awesome_print-0.3.2/lib"
 else
   puts "Global rvm gemset 'global' not found"
