@@ -1,6 +1,8 @@
 # http://linux.die.net/man/1/irb
 
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
+# IRB.conf[:USE_READLINE] = false
+
 
 # Check if RVM hasn't already loaded some history.
 if Readline::HISTORY.size == 0
@@ -33,7 +35,7 @@ module Readline
     dups.reverse!
     dups.each do |i|
       i += 1 if Readline::VERSION == "EditLine wrapper" # OS X native ruby?
-      Readline::HISTORY.delete_at(i)
+      Readline::HISTORY.delete_at(i) rescue nil
     end
     # File.open("#{ENV['HOME']}/.irb-history", 'ab') { |f| f << "#{line}\n" }
     line
@@ -48,34 +50,38 @@ end
 # and try to load theese gems from rvm global gemset
 rvm_global_gem_path = ENV['GEM_PATH'].split(':').grep(/@global/).first
 if rvm_global_gem_path
-  $LOAD_PATH << "#{rvm_global_gem_path}/gems/hirb-0.4.3/lib"
-  $LOAD_PATH << "#{rvm_global_gem_path}/gems/awesome_print-0.3.2/lib"
+  $LOAD_PATH << "#{rvm_global_gem_path}/gems/awesome_print-1.1.0/lib"
 else
   puts "Global rvm gemset 'global' not found"
 end
 
 begin
   require "ap"
+
   module Kernel
     def ap(object, options = {})
-      puts object.ai(
-        :indent => -2,
-        :color => {
-          :array      => :white,
-          :bignum     => :green,
-          :class      => :yellow,
-          :date       => :green,
-          :falseclass => :white,
-          :fixnum     => :green,
-          :float      => :green,
-          :hash       => :white,
-          :nilclass   => :white,
-          :string     => :green,
-          :symbol     => :cyan,
-          :time       => :green,
-          :trueclass  => :green
-        }
-      )
+      if object.respond_to?(:ai)
+        puts object.ai(
+          :indent => -2,
+          :color => {
+            :array      => :white,
+            :bignum     => :green,
+            :class      => :yellow,
+            :date       => :green,
+            :falseclass => :white,
+            :fixnum     => :green,
+            :float      => :green,
+            :hash       => :white,
+            :nilclass   => :white,
+            :string     => :green,
+            :symbol     => :cyan,
+            :time       => :green,
+            :trueclass  => :green
+          }
+        )
+      else
+        puts object.inspect
+      end
     end
   end
   IRB::Irb.class_eval do
@@ -84,15 +90,6 @@ begin
     end
   end
 rescue LoadError, NameError => e
-  $stderr.puts e.message
-end
-
-begin
-  require "hirb"
-  extend Hirb::Console
-  Hirb.enable :pager => false
-  Hirb.enable :formatter => false
-rescue LoadError => e
   $stderr.puts e.message
 end
 

@@ -1,13 +1,13 @@
 [user]
-  name = Raimonds Samofals
-  email = raimonds.samofals@tieto.com
+	name = Kristaps Erglis
+	email = kristaps.erglis@gmail.com
 [alias]
   co = checkout
 [apply]
   whitespace = nowarn
 [core]
   editor = mate -w
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/erglikri/.gitignore
 [branch]
   autosetuprebase = always
 [color]
@@ -28,3 +28,9 @@
   added = yellow bold
   changed = red bold # also deleted
   untracked = magenta
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -1,3 +1,18 @@
+alias ssz='ssh kristaps@sz.lv'
+alias ssx='ssh rails@xcodus.com'
+alias ssphp='ssh kristaps@tavs.lv'
+alias sstapis='ssh rails@tapisapp.alise.lv'
+alias pryc='bundle exec pry -r ./config/environment'
+alias cuc='cucumber -r features'
+alias cdb_start='couchdb -b && run /usr/local/Cellar/couchdb-lucene/0.8.0/tools/etc/init.d/couchdb-lucene&'
+alias cdb_stop='couchdb -d && kill `ps -ef | grep com.github.rnewson.couchdb.lucene.Main | grep -v grep | awk "{print \\$2}"`'
+alias mvn_package='c bis/backend/services; mvn clean package -Dmaven.test.skip'
+alias sbt_package='c bis/backend/services; sbt package copy-dependencies'
+
+alias spc='script/spec'
+
+
+
 # changing directory to code project
 function c { cd ~/code/$1; }
 function h { cd ~/$1; }
@@ -17,8 +32,8 @@ function ka { kill $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 function ka9 { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 
 # textmate
-function m { mate ${*:-.}; }
-function cm { cd ~/code/$1; mate .; }
+function m { subl ${*:-.}; }
+function cm { cd ~/code/$1; subl .; }
 
 # MacVim
 alias v='mvim'
