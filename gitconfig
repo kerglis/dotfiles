@@ -6,7 +6,7 @@
 [apply]
   whitespace = nowarn
 [core]
-  editor = mate -w
+  editor = subl -w
 	excludesfile = /Users/erglikri/.gitignore
 [branch]
   autosetuprebase = always
@@ -30,7 +30,7 @@
   untracked = magenta
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
