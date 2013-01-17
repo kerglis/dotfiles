@@ -6,7 +6,7 @@
 [apply]
   whitespace = nowarn
 [core]
-  editor = subl -w
+  editor = subl -b
 	excludesfile = /Users/erglikri/.gitignore
 [branch]
   autosetuprebase = always
