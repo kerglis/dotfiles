@@ -1,7 +1,7 @@
 # http://linux.die.net/man/1/irb
 
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
-# IRB.conf[:USE_READLINE] = false
+# IRB.conf[:USE_READLINE] = true
 
 
 # Check if RVM hasn't already loaded some history.
@@ -50,7 +50,7 @@ end
 # and try to load theese gems from rvm global gemset
 rvm_global_gem_path = ENV['GEM_PATH'].split(':').grep(/@global/).first
 if rvm_global_gem_path
-  $LOAD_PATH << "#{rvm_global_gem_path}/gems/awesome_print-1.1.0/lib"
+  $LOAD_PATH << "#{rvm_global_gem_path}/gems/awesome_print-1.2.0/lib"
 else
   puts "Global rvm gemset 'global' not found"
 end

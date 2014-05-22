@@ -1,21 +1,20 @@
-alias ssz='ssh kristaps@sz.lv'
+alias ssz='ssh rails@sz.lv'
 alias ssx='ssh rails@xcodus.com'
 alias ssphp='ssh kristaps@tavs.lv'
-alias sstapis='ssh rails@tapisapp.alise.lv'
-alias pryc='bundle exec pry -r ./config/environment'
-alias cuc='cucumber -r features'
-alias cdb_start='couchdb -b && run /usr/local/Cellar/couchdb-lucene/0.8.0/tools/etc/init.d/couchdb-lucene&'
-alias cdb_stop='couchdb -d && kill `ps -ef | grep com.github.rnewson.couchdb.lucene.Main | grep -v grep | awk "{print \\$2}"`'
-alias mvn_package='c bis/backend/services; mvn clean package -Dmaven.test.skip'
-alias sbt_package='c bis/backend/services; sbt package copy-dependencies'
-
-alias spc='script/spec'
-
-
+alias ssepg='ssh rails@epg.baltcom.lv'
+alias ssdo='ssh rails@d-ocean'
 
 # changing directory to code project
 function c { cd ~/code/$1; }
 function h { cd ~/$1; }
+
+
+# Zeus
+alias zs='zeus server'
+alias zc='zeus console'
+alias zg='zeus generate'
+alias zr='zeus rake'
+alias zt='zeus test'
 
 # misc
 alias reload='. ~/.bash_profile'
@@ -64,6 +63,7 @@ alias gst='git status'
 alias grm="git status | grep -A 1000 'Changed but not updated' | grep deleted | awk '{print \$3}' | xargs git rm"
 function ga { git add ${*:-.}; }
 alias gl='git log --graph "--pretty=format:%C(yellow bold)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan bold)%d%Creset%n%s%n%b" --all'
+alias gphm='git push heroku master'
 
 # svn
 alias s='svn'
@@ -75,7 +75,9 @@ alias sci='svn commit'
 function _rails() {
   local command=$1;
   shift;
-  if [ -x script/rails ]; then
+  if [ -x bin/rails ]; then
+    bin/rails $command $*
+  elif [ -x script/rails ]; then
     script/rails $command $*
   elif [ -x script/$command ]; then
     script/$command $*
