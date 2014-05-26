@@ -3,6 +3,7 @@
 	email = kristaps.erglis@gmail.com
 [alias]
   co = checkout
+  pushall = "!f(){ for i in `git remote`; do git push $i; done; };f"
 [apply]
   whitespace = nowarn
 [core]

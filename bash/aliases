@@ -48,6 +48,7 @@ alias lh='ls -la | grep ":[0-9]* \."' # show only hidden files
 alias g='git'
 alias gpll='git pull'
 alias gpsh='git push'
+alias gpsha='git pushall'
 alias gd='git diff'
 alias gds='git diff --stat'
 alias gdc='git diff --cached'
