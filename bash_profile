@@ -14,4 +14,9 @@ export LC_ALL=en_US.UTF-8
 
 export DB_HOST="10.1.120.10"
 
-export ANDROID_HOME=/usr/local/opt/android-sdk
+export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_11_2"
+export SQLPATH="/usr/local/oracle/instantclient_11_2"
+export TNS_ADMIN="/usr/local/oracle/instantclient_11_2"
+export NLS_LANG="AMERICAN_AMERICA.UTF8"
+export PATH=$PATH:$DYLD_LIBRARY_PATH
+export ORACLE_HOME="/usr/local/oracle/instantclient_11_2"
