@@ -10,3 +10,5 @@ TODO
 *.tmproj
 
 .*.swp
+.cap_tasks~
+.rake_tasks~

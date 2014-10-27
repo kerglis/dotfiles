@@ -1,20 +1,15 @@
 alias ssz='ssh rails@sz.lv'
 alias ssx='ssh rails@xcodus.com'
 alias ssphp='ssh kristaps@tavs.lv'
-alias ssepg='ssh rails@epg.baltcom.lv'
 alias ssdo='ssh rails@d-ocean'
 
 # changing directory to code project
 function c { cd ~/code/$1; }
+function cm { cd ~/code/mogo/$1; }
 function h { cd ~/$1; }
 
-
-# Zeus
-alias zs='zeus server'
-alias zc='zeus console'
-alias zg='zeus generate'
-alias zr='zeus rake'
-alias zt='zeus test'
+# spring + rspec
+alias sspec='spring rspec'
 
 # misc
 alias reload='. ~/.bash_profile'
@@ -30,13 +25,9 @@ alias k9='kill -9'
 function ka { kill $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 function ka9 { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 
-# textmate
+# sublime
 function m { subl ${*:-.}; }
 function cm { cd ~/code/$1; subl .; }
-
-# MacVim
-alias v='mvim'
-function cv { cd ~/code/$1; mvim .; }
 
 # ls
 alias l='ls -1'
@@ -48,6 +39,7 @@ alias lh='ls -la | grep ":[0-9]* \."' # show only hidden files
 alias g='git'
 alias gpll='git pull'
 alias gpsh='git push'
+alias gpo='git push origin'
 alias gpsha='git pushall'
 alias gd='git diff'
 alias gds='git diff --stat'
@@ -65,12 +57,6 @@ alias grm="git status | grep -A 1000 'Changed but not updated' | grep deleted | 
 function ga { git add ${*:-.}; }
 alias gl='git log --graph "--pretty=format:%C(yellow bold)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan bold)%d%Creset%n%s%n%b" --all'
 alias gphm='git push heroku master'
-
-# svn
-alias s='svn'
-alias sl='svn up'
-alias si='svn commit'
-alias sci='svn commit'
 
 # rails
 function _rails() {
