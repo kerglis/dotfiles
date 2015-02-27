@@ -4,8 +4,9 @@ alias ssphp='ssh kristaps@tavs.lv'
 alias ssdo='ssh rails@d-ocean'
 
 # changing directory to code project
-function c { cd ~/code/$1; }
+function c  { cd ~/code/$1; }
 function mc { cd ~/code/mogo/$1; }
+function cg { cd ~/code/codeguard/$1; }
 
 # spring + rspec
 alias sspec='spring rspec'
