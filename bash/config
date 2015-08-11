@@ -28,7 +28,7 @@ _rvm_prompt() { local s=$(rvm-prompt v g); printf "${s:+ ${s}}"; }
 export PS1="[ \[\e[31;1m\]\$(_user_root)\[\e[35;1m\]\w\[\e[33;1m\]\$(_rvm_prompt)\[\e[34;1m\]\$(_scm_info)\[\e[0m\] ]\[\e[32;1m\] %\[\e[0m\] "
 
 export PATH=$HOME/bin:$PATH
-export EDITOR="subl -n"
+export EDITOR="nano"
 export SVN_EDITOR=$EDITOR
 stty erase ^H
 
@@ -41,14 +41,3 @@ shopt -s histappend
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-### Oracle
-# if [ -d "$HOME/Library/Oracle" ]; then
-#   export ORACLE_IC_HOME=$HOME/Library/Oracle/instantclient
-#   export DYLD_LIBRARY_PATH=$ORACLE_IC_HOME
-#   export TNS_ADMIN=$DYLD_LIBRARY_PATH
-#   export PATH=$PATH:$DYLD_LIBRARY_PATH
-#   export NLS_LANG=AMERICAN_AMERICA.UTF8
-# fi
-
-### Java
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
