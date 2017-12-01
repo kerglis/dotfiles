@@ -1,0 +1,6 @@
+#!/bin/sh
+
+RAILS_ENV=test rake db:drop
+RAILS_ENV=test rake db:create
+RAILS_ENV=test rake SKIP_INTEGRITY_CHECK=true db:structure:load
+RAILS_ENV=test rake SKIP_INTEGRITY_CHECK=true db:migrate

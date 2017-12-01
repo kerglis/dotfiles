@@ -3,13 +3,10 @@ alias ssx='ssh rails@ambicode.com'
 alias ssphp='ssh kristaps@tavs.lv'
 alias ssdo='ssh rails@d-ocean'
 alias sshdevjar='ssh -Y -A devjar@192.168.162.128'
-alias mountdevjar='mount 192.168.162.128:/home/devjar ~/MountedFS/devjar'
 
 
 # changing directory to code project
 function c { cd ~/code/$1; }
-function mc { cd ~/code/mogo/$1; }
-function cdg { cd ~/code/codeguard/$1; }
 
 # spring + rspec
 alias sspec='spring rspec'
