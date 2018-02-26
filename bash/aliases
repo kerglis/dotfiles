@@ -1,9 +1,5 @@
-alias ssz='ssh rails@sz.lv'
-alias ssx='ssh rails@ambicode.com'
 alias ssphp='ssh kristaps@tavs.lv'
 alias ssdo='ssh rails@d-ocean'
-alias sshdevjar='ssh -Y -A devjar@192.168.162.128'
-
 
 # changing directory to code project
 function c { cd ~/code/$1; }
