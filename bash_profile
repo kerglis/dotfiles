@@ -10,3 +10,7 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export SCRABBLE_DB_PASSWORD="bvAETBM4ayhRG5sJ"
